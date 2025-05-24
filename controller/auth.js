@@ -9,8 +9,9 @@ cloudinary.config({
 });
 exports.showTest = async (req, res) => {
   try {
-    const data = await prisma.category.findMany({});
-    res.json(data);
+    res.send("dlfkdflkf");
+    // const data = await prisma.category.findMany({});
+    // res.json(data);
   } catch (err) {
     console.log(err);
   }
