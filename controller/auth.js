@@ -9,13 +9,14 @@ cloudinary.config({
 });
 exports.showTest = async (req, res) => {
   try {
-    // res.send("dlfkdflkf");
     const data = await prisma.category.findMany({});
-    res.json(data);
+    res.status(200).json(data); // ส่ง status 200 OK พร้อมข้อมูล
   } catch (err) {
-    console.log(err);
+    console.error("Error fetching categories:", err);
+    res.status(500).json({ error: "Failed to fetch categories" }); // ส่ง status 500 พร้อมข้อความ error
   }
 };
+
 exports.create = async (req, res) => {
   const { namee } = req.body;
 
