@@ -17,6 +17,7 @@ exports.showTest = async (req, res) => {
   }
 };
 
+// ไยกนหยดยกดนยก
 exports.create = async (req, res) => {
   const { namee } = req.body;
 
