@@ -9,8 +9,11 @@ cloudinary.config({
 });
 exports.showTest = async (req, res) => {
   try {
-    const data = await prisma.category.findMany({});
-    res.status(200).json({data}); // ส่ง status 200 OK พร้อมข้อมูล
+    res.json({
+      message: "ทำไม",
+    });
+    // const data = await prisma.category.findMany({});
+    // res.status(200).json({ data }); // ส่ง status 200 OK พร้อมข้อมูล
   } catch (err) {
     console.error("Error fetching categories:", err);
     res.status(500).json({ error: "Failed to fetch categories" }); // ส่ง status 500 พร้อมข้อความ error
