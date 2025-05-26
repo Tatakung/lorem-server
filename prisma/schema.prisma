@@ -8,12 +8,12 @@ generator client {
   provider = "prisma-client-js"
   // output   = "../generated/prisma"
 }
-
 datasource db {
-        provider  = "postgresql"
-        url       = env("DATABASE_URL")
-        directUrl = env("DIRECT_URL")
-        }
+  // provider  = "mysql"
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
 
 model User {
   id        Int      @id @default(autoincrement())
@@ -97,6 +97,7 @@ model ProductOnCart {
   count     Int
   price     Float
 }
+
 model Image {
   id         Int      @id @default(autoincrement())
   asset_id   String
