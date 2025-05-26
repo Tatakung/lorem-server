@@ -1,19 +1,20 @@
 {
-  "version": 2,
-  "name": "roitai",
   "builds": [
     {
-      "src": "server.js",
+      "src": "server/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "server.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "src": "/api/(.*)",
+      "dest": "/server/server.js"
     }
-  ]
+  ],
+  "env": {
+    "DATABASE_URL": "postgresql://postgres:PCnVHfdGolBRY3XB@db.plnalkuhbimosvpxtogr.supabase.co:5432/postgres?pgbouncer=true&connection_limit=1",
+    "CLOUDINARY_CLOUD_NAME": "doeyc1jdp",
+    "CLOUDINARY_API_KEY": "766559652861888",
+    "CLOUDINARY_API_SECRET": "lneQteiBOtYwioRslvGQVtZqdAU"
+  }
 }
